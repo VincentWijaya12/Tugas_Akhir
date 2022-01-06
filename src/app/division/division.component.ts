@@ -1,5 +1,6 @@
+import { ConditionalExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Devision } from '../model/devision.model';
+import { Division } from '../model/division.model';
 import { DivisionService } from '../services/division.service';
 
 @Component({
@@ -10,24 +11,23 @@ import { DivisionService } from '../services/division.service';
 export class DivisionComponent implements OnInit {
 
   divisions?:Division[];
-  currentDivision:Division={};
-  name='';
+  curretDivision:Division={};
+  name = '';
   constructor(private divisionService:DivisionService) { }
 
   ngOnInit(): void {
     this.retrieveDivision()
   }
-
   retrieveDivision():void{
     this.divisionService.getAll()
-    .subscribe()
-      data=>{
-        this.divisions=data;
-        console.log(data);
-      },
-      error=>{
-        console.log(error)
-      }
-    )
-
+      .subscribe(
+        data=>{
+          this.divisions=data;
+          console.log(data);
+        },
+        error=>{
+          console.log(error)
+        }
+      )
+  }
 }
