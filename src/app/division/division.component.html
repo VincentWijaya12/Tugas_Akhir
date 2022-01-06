@@ -1,1 +1,29 @@
-<p>division works!</p>
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+
+                </div>
+                <div class="card-body">
+                    <table calss="table table-head-fixed">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let currentDevision of divisions;let i = index">
+                            <tr>
+                                <td>{{currentDevision.id}}</td>
+                                <td>{{currentDevision.Name}}</td>
+                                <td>{{currentDevision.description}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
